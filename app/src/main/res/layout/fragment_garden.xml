@@ -20,11 +20,9 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
                 name="hasPlantings"
                 type="Boolean" />
-
     </data>
 
     <FrameLayout
@@ -50,7 +48,5 @@
                 android:text="@string/garden_empty"
                 android:textSize="24sp"
                 app:isGone="@{hasPlantings}"/>
-
     </FrameLayout>
-
 </layout>

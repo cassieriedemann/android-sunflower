@@ -25,6 +25,8 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.samples.apps.sunflower.databinding.ActivityGardenBinding
+import org.koin.android.scope.ext.android.bindScope
+import org.koin.android.scope.ext.android.getScope
 
 class GardenActivity : AppCompatActivity() {
 

@@ -30,10 +30,11 @@ import com.google.samples.apps.sunflower.adapters.PlantAdapter
 import com.google.samples.apps.sunflower.databinding.FragmentPlantListBinding
 import com.google.samples.apps.sunflower.utilities.InjectorUtils
 import com.google.samples.apps.sunflower.viewmodels.PlantListViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class PlantListFragment : Fragment() {
 
-    private lateinit var viewModel: PlantListViewModel
+    private val viewModel by viewModel<PlantListViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,10 +42,6 @@ class PlantListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentPlantListBinding.inflate(inflater, container, false)
-        val context = context ?: return binding.root
-
-        val factory = InjectorUtils.providePlantListViewModelFactory(context)
-        viewModel = ViewModelProviders.of(this, factory).get(PlantListViewModel::class.java)
 
         val adapter = PlantAdapter()
         binding.plantList.adapter = adapter
